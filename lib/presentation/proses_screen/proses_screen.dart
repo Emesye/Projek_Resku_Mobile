@@ -20,30 +20,193 @@ class ProsesScreen extends StatelessWidget {
                 Align(
                   alignment: Alignment.centerLeft,
                   child: Container(
-                    padding: getPadding(
-                      left: 30,
-                      top: 8,
-                      right: 210,
-                      bottom: 8,
+                    height: getVerticalSize(
+                      33.00,
                     ),
-                    decoration: BoxDecoration(
-                      color: ColorConstant.redA700A5,
+                    width: size.width,
+                    margin: getMargin(
+                      top: 0,
                     ),
-                    child: Text(
-                      "Pesanan",
-                      overflow: TextOverflow.ellipsis,
-                      textAlign: TextAlign.left,
-                      style: TextStyle(
-                        color: ColorConstant.whiteA700,
-                        fontSize: getFontSize(
-                          20,
+                    child: Stack(
+                      alignment: Alignment.centerRight,
+                      children: [
+                        Container(
+                          width: 100,
+                          height: 100,
+                          margin: getMargin(
+                            right: 285,
+                            left: 0,
+                            top: 0,
+                            bottom: 0,
+                          ),
+                          child: TextButton(
+                            style: TextButton.styleFrom(
+                              backgroundColor: ColorConstant.redA700A5,
+                              // shape: BoxBorder(),
+                            ),
+                            child: Icon(
+                              Icons.arrow_back,
+                              color: Colors.white,
+                            ),
+                            onPressed: () {},
+                          ),
+
+                          //   Container(
+                          //     width: 100,
+                          //     height: 100,
+                          //     margin: getMargin(
+                          //       right: 290,
+                          //       left: 0,
+                          //       top: 0,
+                          //       bottom: 3,
+                          //     ),
+                          //     padding: EdgeInsets.only(top: 4),
+                          //     child: MaterialButton(
+                          //         child: Text("Back"),
+                          //         minWidth: double.infinity,
+                          //         height: 75.0,
+                          //         color: ColorConstant.redA700A5,
+                          //         // color: Color.fromARGB(255, 255, 68, 68),
+                          //         textColor: Colors.white,
+                          //         onPressed: () {
+                          //           showDialog(
+                          //             context: context,
+                          //             builder: (context) {
+                          //               return AlertDialog(
+                          //                 title: Text(""),
+                          //                 content: Text("transaksi berhasil!"),
+                          //                 actions: [
+                          //                   TextButton(
+                          //                     onPressed: () {
+                          //                       Navigator.pop(context);
+                          //                     },
+                          //                     child: Text("Okay"),
+                          //                   ),
+                          //                 ],
+                          //               );
+                          //             },
+                          //           );
+                          //         }),
+                          //   ),
                         ),
-                        fontFamily: 'Happy Monkey',
-                        fontWeight: FontWeight.w400,
-                      ),
+                        // Align(
+                        //   alignment: Alignment.centerLeft,
+                        //   child: Container(
+                        //     margin: getMargin(
+                        //       right: 1,
+                        //     ),
+                        //     decoration: BoxDecoration(
+                        //       color: ColorConstant.redA700A5,
+                        //     ),
+                        //     child: Column(
+                        //       mainAxisSize: MainAxisSize.min,
+                        //       crossAxisAlignment: CrossAxisAlignment.center,
+                        //       mainAxisAlignment: MainAxisAlignment.start,
+                        //       children: [
+
+                        Container(
+                          color: ColorConstant.redA700A5,
+                          width: 1000,
+                          height: 200,
+                          margin: getMargin(
+                            right: 0,
+                            left: 35,
+                            top: 0,
+                            bottom: 0,
+                          ),
+                          child: Text(
+                            " Pesanan",
+                            overflow: TextOverflow.ellipsis,
+                            textAlign: TextAlign.left,
+                            style: TextStyle(
+                              color: ColorConstant.whiteA700,
+                              fontSize: getFontSize(
+                                20,
+                              ),
+                              fontFamily: 'Happy Monkey',
+                              fontWeight: FontWeight.w400,
+                            ),
+                          ),
+                        )
+                        //   ),
+                        // ),
+
+                        //       ],
+                        //     ),
+                        //   ),
+                        // // ),
+
+                        // CustomButton(
+                        //   text: "\"BAYAR\"",
+                        //   margin: getMargin(),
+                        //   alignment: Alignment.centerRight,
+                        // ),
+                        // Container(
+                        //   width: 150,
+                        //   height: 100,
+                        //   margin: getMargin(
+                        //     left: 0,
+                        //     top: 0,
+                        //     bottom: 3,
+                        //   ),
+                        //   padding: EdgeInsets.only(top: 4),
+                        //   child: MaterialButton(
+                        //       child: Text("Bayar"),
+                        //       minWidth: double.infinity,
+                        //       height: 45.0,
+                        //       color: Color.fromARGB(255, 255, 68, 68),
+                        //       textColor: Colors.white70,
+                        //       onPressed: () {
+                        //         showDialog(
+                        //           context: context,
+                        //           builder: (context) {
+                        //             return AlertDialog(
+                        //               title: Text(""),
+                        //               content: Text("transaksi berhasil!"),
+                        //               actions: [
+                        //                 TextButton(
+                        //                   onPressed: () {
+                        //                     Navigator.pop(context);
+                        //                   },
+                        //                   child: Text("Okay"),
+                        //                 ),
+                        //               ],
+                        //             );
+                        //           },
+                        //         );
+                        //       }),
+                        // ),
+                      ],
                     ),
                   ),
                 ),
+                // Align(
+                //   alignment: Alignment.centerLeft,
+                //   child: Container(
+                //     padding: getPadding(
+                //       left: 30,
+                //       top: 10,
+                //       right: 210,
+                //       bottom: 10,
+                //     ),
+                //     decoration: BoxDecoration(
+                //       color: ColorConstant.redA700A5,
+                //     ),
+                //     child: Text(
+                //       "Pesanan",
+                //       overflow: TextOverflow.ellipsis,
+                //       textAlign: TextAlign.left,
+                //       style: TextStyle(
+                //         color: ColorConstant.whiteA700,
+                //         fontSize: getFontSize(
+                //           20,
+                //         ),
+                //         fontFamily: 'Happy Monkey',
+                //         fontWeight: FontWeight.w400,
+                //       ),
+                //     ),
+                //   ),
+                // ),
                 Padding(
                   padding: getPadding(
                     left: 25,
@@ -114,6 +277,8 @@ class ProsesScreen extends StatelessWidget {
                     itemCount: 2,
                     itemBuilder: (context, index) {
                       return ProsesItemWidget();
+                      // decoration:
+                      //   BoxDecoration(borderRadius: BorderRadius.circular(50));
                     },
                   ),
                 ),
@@ -128,6 +293,8 @@ class ProsesScreen extends StatelessWidget {
                       top: 198,
                     ),
                     decoration: BoxDecoration(
+                      // shape: RoundedRectangleBorder(
+                      //   borderRadius: BorderRadius.circular(getHorizontalSize(15))),
                       color: ColorConstant.gray800,
                     ),
                   ),
@@ -136,36 +303,76 @@ class ProsesScreen extends StatelessWidget {
                   alignment: Alignment.centerRight,
                   child: Padding(
                     padding: getPadding(
-                      left: 17,
-                      top: 6,
-                      right: 17,
+                      left: 185,
+                      top: 0,
+                      right: 0,
                     ),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.end,
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      mainAxisSize: MainAxisSize.max,
-                      children: [
-                        Padding(
-                          padding: getPadding(
-                            top: 4,
-                            bottom: 5,
-                          ),
-                          child: Text(
-                            "BAYAR",
-                            overflow: TextOverflow.ellipsis,
-                            textAlign: TextAlign.left,
-                            style: TextStyle(
-                              color: ColorConstant.black900,
-                              fontSize: getFontSize(
-                                15,
+
+                    child: Container(
+                      height: 120,
+                      color: Colors.white,
+                      alignment: Alignment.bottomLeft,
+                      child: Column(children: [
+                        Text(''),
+                        Container(
+                          width: 150,
+                          height: 100,
+                          color: Colors.white,
+                          child: Align(
+                            alignment: Alignment.centerRight,
+                            child: TextField(
+                              // keyboardType: TextInputType.numberWithOptions(
+                              //     decimal: true, signed: false),
+                              // // onChanged: _yourOnChange,
+                              // inputFormatters: [
+                              //   FilteringTextInputFormatter.allow(RegExp(r"[0-9.]")),
+                              //   TextInputFormatter.withFunction((oldValue, newValue) {
+                              //     try {
+                              //       final text = newValue.text;
+                              //       if (text.isNotEmpty) double.parse(text);
+                              //       return newValue;
+                              //     } catch (e) {}
+                              //     return oldValue;
+                              //   }),
+                              // ],
+                              textAlign: TextAlign.center,
+
+                              decoration: InputDecoration(
+                                border: OutlineInputBorder(
+                                    borderRadius: BorderRadius.circular(25)),
+                                hintText: 'Jumlah Bayar',
                               ),
-                              fontFamily: 'Inter',
-                              fontWeight: FontWeight.w400,
                             ),
                           ),
-                        ),
-                      ],
+                        )
+                      ]),
                     ),
+                    // child: Row(
+                    //   mainAxisAlignment: MainAxisAlignment.end,
+                    //   crossAxisAlignment: CrossAxisAlignment.center,
+                    //   mainAxisSize: MainAxisSize.max,
+                    //   children: [
+                    //     Padding(
+                    //       padding: getPadding(
+                    //         top: 4,
+                    //         bottom: 5,
+                    //       ),
+                    //       child: Text(
+                    //         "BAYAR",
+                    //         overflow: TextOverflow.ellipsis,
+                    //         textAlign: TextAlign.left,
+                    //         style: TextStyle(
+                    //           color: ColorConstant.black900,
+                    //           fontSize: getFontSize(
+                    //             15,
+                    //           ),
+                    //           fontFamily: 'Inter',
+                    //           fontWeight: FontWeight.w400,
+                    //         ),
+                    //       ),
+                    //     ),
+                    //   ],
+                    // ),
                   ),
                 ),
                 Align(
@@ -247,7 +454,7 @@ class ProsesScreen extends StatelessWidget {
                                   alignment: Alignment.centerLeft,
                                   child: Padding(
                                     padding: getPadding(
-                                      left: 99,
+                                      left: 110,
                                       top: 13,
                                       right: 99,
                                       bottom: 13,
@@ -277,7 +484,7 @@ class ProsesScreen extends StatelessWidget {
                         //   alignment: Alignment.centerRight,
                         // ),
                         Container(
-                          width: 130,
+                          width: 150,
                           height: 100,
                           margin: getMargin(
                             left: 0,
