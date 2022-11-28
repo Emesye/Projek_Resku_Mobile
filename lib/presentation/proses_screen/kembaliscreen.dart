@@ -2,9 +2,8 @@ import '../proses_screen/widgets/proses_item_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:masayu_s_application6/core/app_export.dart';
 import 'package:masayu_s_application6/widgets/custom_button.dart';
-import 'package:masayu_s_application6/presentation/proses_screen/kembaliscreen.dart';
 
-class ProsesScreen extends StatelessWidget {
+class kembali extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -48,7 +47,7 @@ class ProsesScreen extends StatelessWidget {
                             ),
                             child: Icon(
                               Icons.arrow_back,
-                              color: Colors.white,
+                              color: Colors.black,
                               //     onPressed: () {
                               //  Navigator.push(
                               //   context,
@@ -56,16 +55,10 @@ class ProsesScreen extends StatelessWidget {
                               //  );
                               //  }
                             ),
-                            onPressed: () {
-                              Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                    builder: (context) => kembali()),
-                              );
-                            },
+                            onPressed: () {},
                           ),
 
-                          //   Container(hs
+                          //   Container(
                           //     width: 100,
                           //     height: 100,
                           //     margin: getMargin(
@@ -129,7 +122,7 @@ class ProsesScreen extends StatelessWidget {
                             bottom: 0,
                           ),
                           child: Text(
-                            " Pesanan",
+                            " HALAMAN KEMBALI",
                             overflow: TextOverflow.ellipsis,
                             textAlign: TextAlign.left,
                             style: TextStyle(
