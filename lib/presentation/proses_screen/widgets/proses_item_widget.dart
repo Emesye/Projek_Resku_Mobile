@@ -21,7 +21,7 @@ class ProsesItemWidget extends StatelessWidget {
               bottom: 2,
             ),
             child: Text(
-              "Jus Pisang ",
+              "Jus Pisangg",
               overflow: TextOverflow.ellipsis,
               textAlign: TextAlign.left,
               style: TextStyle(
@@ -59,7 +59,7 @@ class ProsesItemWidget extends StatelessWidget {
               top: 2,
             ),
             child: Text(
-              " Rp. 3.000",
+              " Rp. 3.0000",
               overflow: TextOverflow.ellipsis,
               textAlign: TextAlign.left,
               style: TextStyle(

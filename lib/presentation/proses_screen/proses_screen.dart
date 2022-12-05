@@ -4,12 +4,34 @@ import 'package:masayu_s_application6/core/app_export.dart';
 import 'package:masayu_s_application6/widgets/custom_button.dart';
 import 'package:masayu_s_application6/presentation/proses_screen/kembaliscreen.dart';
 
+Widget _buildListView() {
+  return ListView.builder(
+      itemCount: 20,
+      itemBuilder: (BuildContext context, index) {
+        return ListTile(title: Text('Item $index'));
+      });
+}
+
 class ProsesScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        backgroundColor: ColorConstant.whiteA700,
+        appBar: AppBar(
+          backgroundColor: ColorConstant.redA700A5,
+          title: const Text('Pesanan'),
+          centerTitle: true,
+          leading: IconButton(
+            icon: const Icon(Icons.arrow_back),
+            onPressed: (() {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => kembali()),
+              );
+            }),
+          ),
+        ),
+        // backgroundColor: ColorConstant.whiteA700,
         body: Container(
           width: size.width,
           child: SingleChildScrollView(
@@ -40,191 +62,15 @@ class ProsesScreen extends StatelessWidget {
                             top: 0,
                             bottom: 0,
                           ),
-                          child: TextButton(
-                            style: TextButton.styleFrom(
-                              backgroundColor: ColorConstant.redA700A5,
-
-                              // shape: BoxBorder(),
-                            ),
-                            child: Icon(
-                              Icons.arrow_back,
-                              color: Colors.white,
-                              //     onPressed: () {
-                              //  Navigator.push(
-                              //   context,
-                              // MaterialPageRoute(builder: (context) => DashboardScreen()),
-                              //  );
-                              //  }
-                            ),
-                            onPressed: () {
-                              Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                    builder: (context) => kembali()),
-                              );
-                            },
-                          ),
-
-                          //   Container(hs
-                          //     width: 100,
-                          //     height: 100,
-                          //     margin: getMargin(
-                          //       right: 290,
-                          //       left: 0,
-                          //       top: 0,
-                          //       bottom: 3,
-                          //     ),
-                          //     padding: EdgeInsets.only(top: 4),
-                          //     child: MaterialButton(
-                          //         child: Text("Back"),
-                          //         minWidth: double.infinity,
-                          //         height: 75.0,
-                          //         color: ColorConstant.redA700A5,
-                          //         // color: Color.fromARGB(255, 255, 68, 68),
-                          //         textColor: Colors.white,
-                          //         onPressed: () {
-                          //           showDialog(
-                          //             context: context,
-                          //             builder: (context) {
-                          //               return AlertDialog(
-                          //                 title: Text(""),
-                          //                 content: Text("transaksi berhasil!"),
-                          //                 actions: [
-                          //                   TextButton(
-                          //                     onPressed: () {
-                          //                       Navigator.pop(context);
-                          //                     },
-                          //                     child: Text("Okay"),
-                          //                   ),
-                          //                 ],
-                          //               );
-                          //             },
-                          //           );
-                          //         }),
-                          //   ),
                         ),
-                        // Align(
-                        //   alignment: Alignment.centerLeft,
-                        //   child: Container(
-                        //     margin: getMargin(
-                        //       right: 1,
-                        //     ),
-                        //     decoration: BoxDecoration(
-                        //       color: ColorConstant.redA700A5,
-                        //     ),
-                        //     child: Column(
-                        //       mainAxisSize: MainAxisSize.min,
-                        //       crossAxisAlignment: CrossAxisAlignment.center,
-                        //       mainAxisAlignment: MainAxisAlignment.start,
-                        //       children: [
-
-                        Container(
-                          color: ColorConstant.redA700A5,
-                          width: 1000,
-                          height: 200,
-                          margin: getMargin(
-                            right: 0,
-                            left: 35,
-                            top: 0,
-                            bottom: 0,
-                          ),
-                          child: Text(
-                            " Pesanan",
-                            overflow: TextOverflow.ellipsis,
-                            textAlign: TextAlign.left,
-                            style: TextStyle(
-                              color: ColorConstant.whiteA700,
-                              fontSize: getFontSize(
-                                20,
-                              ),
-                              fontFamily: 'Happy Monkey',
-                              fontWeight: FontWeight.w400,
-                            ),
-                          ),
-                        )
-                        //   ),
-                        // ),
-
-                        //       ],
-                        //     ),
-                        //   ),
-                        // // ),
-
-                        // CustomButton(
-                        //   text: "\"BAYAR\"",
-                        //   margin: getMargin(),
-                        //   alignment: Alignment.centerRight,
-                        // ),
-                        // Container(
-                        //   width: 150,
-                        //   height: 100,
-                        //   margin: getMargin(
-                        //     left: 0,
-                        //     top: 0,
-                        //     bottom: 3,
-                        //   ),
-                        //   padding: EdgeInsets.only(top: 4),
-                        //   child: MaterialButton(
-                        //       child: Text("Bayar"),
-                        //       minWidth: double.infinity,
-                        //       height: 45.0,
-                        //       color: Color.fromARGB(255, 255, 68, 68),
-                        //       textColor: Colors.white70,
-                        //       onPressed: () {
-                        //         showDialog(
-                        //           context: context,
-                        //           builder: (context) {
-                        //             return AlertDialog(
-                        //               title: Text(""),
-                        //               content: Text("transaksi berhasil!"),
-                        //               actions: [
-                        //                 TextButton(
-                        //                   onPressed: () {
-                        //                     Navigator.pop(context);
-                        //                   },
-                        //                   child: Text("Okay"),
-                        //                 ),
-                        //               ],
-                        //             );
-                        //           },
-                        //         );
-                        //       }),
-                        // ),
                       ],
                     ),
                   ),
                 ),
-                // Align(
-                //   alignment: Alignment.centerLeft,
-                //   child: Container(
-                //     padding: getPadding(
-                //       left: 30,
-                //       top: 10,
-                //       right: 210,
-                //       bottom: 10,
-                //     ),
-                //     decoration: BoxDecoration(
-                //       color: ColorConstant.redA700A5,
-                //     ),
-                //     child: Text(
-                //       "Pesanan",
-                //       overflow: TextOverflow.ellipsis,
-                //       textAlign: TextAlign.left,
-                //       style: TextStyle(
-                //         color: ColorConstant.whiteA700,
-                //         fontSize: getFontSize(
-                //           20,
-                //         ),
-                //         fontFamily: 'Happy Monkey',
-                //         fontWeight: FontWeight.w400,
-                //       ),
-                //     ),
-                //   ),
-                // ),
                 Padding(
                   padding: getPadding(
                     left: 25,
-                    top: 6,
+                    top: 7,
                     right: 25,
                   ),
                   child: Text(
@@ -241,6 +87,7 @@ class ProsesScreen extends StatelessWidget {
                     ),
                   ),
                 ),
+
                 Align(
                   alignment: Alignment.centerLeft,
                   child: Container(
@@ -256,46 +103,14 @@ class ProsesScreen extends StatelessWidget {
                     ),
                   ),
                 ),
-                Align(
-                  alignment: Alignment.centerLeft,
-                  child: Padding(
-                    padding: getPadding(
-                      left: 25,
-                      top: 16,
-                      right: 25,
-                    ),
-                    child: Text(
-                      "ID Transaksi",
-                      overflow: TextOverflow.ellipsis,
-                      textAlign: TextAlign.left,
-                      style: TextStyle(
-                        color: ColorConstant.black900,
-                        fontSize: getFontSize(
-                          15,
-                        ),
-                        fontFamily: 'Inter',
-                        fontWeight: FontWeight.w400,
-                      ),
-                    ),
-                  ),
-                ),
-                Padding(
-                  padding: getPadding(
-                    left: 25,
-                    top: 30,
-                    right: 25,
-                  ),
-                  child: ListView.builder(
-                    physics: BouncingScrollPhysics(),
-                    shrinkWrap: true,
-                    itemCount: 2,
-                    itemBuilder: (context, index) {
-                      return ProsesItemWidget();
-                      // decoration:
-                      //   BoxDecoration(borderRadius: BorderRadius.circular(50));
-                    },
-                  ),
-                ),
+
+                Container(
+                    height: 320,
+                    color: Colors.white,
+                    child: Scrollbar(
+                      child: _buildListView(),
+                    )),
+
                 Align(
                   alignment: Alignment.centerLeft,
                   child: Container(
@@ -304,15 +119,75 @@ class ProsesScreen extends StatelessWidget {
                     ),
                     width: size.width,
                     margin: getMargin(
-                      top: 198,
+                      top: 8,
                     ),
                     decoration: BoxDecoration(
-                      // shape: RoundedRectangleBorder(
-                      //   borderRadius: BorderRadius.circular(getHorizontalSize(15))),
                       color: ColorConstant.gray800,
                     ),
                   ),
                 ),
+                // Align(
+                //   alignment: Alignment.centerLeft,
+                //   child: Padding(
+                //     padding: getPadding(
+                //       left: 25,
+                //       top: 16,
+                //       right: 25,
+                //     ),
+                //   )
+                // )
+                //     // child: Text(
+                //     //   "ID Transaksi",
+                //     //   overflow: TextOverflow.ellipsis,
+                //     //   textAlign: TextAlign.left,
+                //     //   style: TextStyle(
+                //     //     color: ColorConstant.black900,
+                //     //     fontSize: getFontSize(
+                //     //       15,
+                //     //     ),
+                //     //     fontFamily: 'Inter',
+                //     //     fontWeight: FontWeight.w400,
+                //     //   ),
+                //     // ),
+                //   ),
+                // ),
+                // Align(
+                //     alignment: Alignment.centerLeft,
+                //     child: SingleChildScrollView(
+                //         // child: ListView(
+                //         //   children: [Text("Test1")],
+                //         // ),
+                //         )),
+                // Padding(
+                //   padding: getPadding(
+                //     left: 25,
+                //     top: 30,
+                //     right: 25,
+                //   ),
+                //   // child: ListView.builder(
+                //   //   physics: BouncingScrollPhysics(),
+                //   //   shrinkWrap: true,
+                //   //   itemCount: 3,
+                //   //   itemBuilder: (context, index) {
+                //   //     return ProsesItemWidget();
+                //   //                         },
+                //   // ),
+                // ),
+                // Align(
+                //   alignment: Alignment.centerLeft,
+                //   child: Container(
+                //     height: getVerticalSize(
+                //       1.00,
+                //     ),
+                //     width: size.width,
+                //     margin: getMargin(
+                //       top: 100,
+                //     ),
+                //     decoration: BoxDecoration(
+                //       color: ColorConstant.gray800,
+                //     ),
+                //   ),
+                // ),
                 Align(
                   alignment: Alignment.centerRight,
                   child: Padding(
@@ -321,7 +196,6 @@ class ProsesScreen extends StatelessWidget {
                       top: 0,
                       right: 0,
                     ),
-
                     child: Container(
                       height: 120,
                       color: Colors.white,
@@ -335,22 +209,7 @@ class ProsesScreen extends StatelessWidget {
                           child: Align(
                             alignment: Alignment.centerRight,
                             child: TextField(
-                              // keyboardType: TextInputType.numberWithOptions(
-                              //     decimal: true, signed: false),
-                              // // onChanged: _yourOnChange,
-                              // inputFormatters: [
-                              //   FilteringTextInputFormatter.allow(RegExp(r"[0-9.]")),
-                              //   TextInputFormatter.withFunction((oldValue, newValue) {
-                              //     try {
-                              //       final text = newValue.text;
-                              //       if (text.isNotEmpty) double.parse(text);
-                              //       return newValue;
-                              //     } catch (e) {}
-                              //     return oldValue;
-                              //   }),
-                              // ],
                               textAlign: TextAlign.center,
-
                               decoration: InputDecoration(
                                 border: OutlineInputBorder(
                                     borderRadius: BorderRadius.circular(25)),
@@ -361,32 +220,6 @@ class ProsesScreen extends StatelessWidget {
                         )
                       ]),
                     ),
-                    // child: Row(
-                    //   mainAxisAlignment: MainAxisAlignment.end,
-                    //   crossAxisAlignment: CrossAxisAlignment.center,
-                    //   mainAxisSize: MainAxisSize.max,
-                    //   children: [
-                    //     Padding(
-                    //       padding: getPadding(
-                    //         top: 4,
-                    //         bottom: 5,
-                    //       ),
-                    //       child: Text(
-                    //         "BAYAR",
-                    //         overflow: TextOverflow.ellipsis,
-                    //         textAlign: TextAlign.left,
-                    //         style: TextStyle(
-                    //           color: ColorConstant.black900,
-                    //           fontSize: getFontSize(
-                    //             15,
-                    //           ),
-                    //           fontFamily: 'Inter',
-                    //           fontWeight: FontWeight.w400,
-                    //         ),
-                    //       ),
-                    //     ),
-                    //   ],
-                    // ),
                   ),
                 ),
                 Align(
@@ -492,11 +325,6 @@ class ProsesScreen extends StatelessWidget {
                             ),
                           ),
                         ),
-                        // CustomButton(
-                        //   text: "\"BAYAR\"",
-                        //   margin: getMargin(),
-                        //   alignment: Alignment.centerRight,
-                        // ),
                         Container(
                           width: 150,
                           height: 100,
@@ -510,7 +338,7 @@ class ProsesScreen extends StatelessWidget {
                               child: Text("Bayar"),
                               minWidth: double.infinity,
                               height: 45.0,
-                              color: Color.fromARGB(255, 255, 68, 68),
+                              color: Color.fromARGB(255, 194, 45, 45),
                               textColor: Colors.white70,
                               onPressed: () {
                                 showDialog(
