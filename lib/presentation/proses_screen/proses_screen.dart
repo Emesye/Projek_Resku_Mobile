@@ -1,8 +1,18 @@
+import 'package:scrollable_table_view/scrollable_table_view.dart';
+
 import '../proses_screen/widgets/proses_item_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:masayu_s_application6/core/app_export.dart';
 import 'package:masayu_s_application6/widgets/custom_button.dart';
 import 'package:masayu_s_application6/presentation/proses_screen/kembaliscreen.dart';
+// Widget build(BuildContext context) {
+//   return MaterialApp(
+//       home: Scaffold(
+//     appBar: AppBar(
+//       title: Text('Flutter table example'),
+//     ),
+//   ));
+// }
 
 Widget _buildListView() {
   return ListView.builder(
@@ -40,33 +50,33 @@ class ProsesScreen extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.center,
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
-                Align(
-                  alignment: Alignment.centerLeft,
-                  child: Container(
-                    height: getVerticalSize(
-                      33.00,
-                    ),
-                    width: size.width,
-                    margin: getMargin(
-                      top: 0,
-                    ),
-                    child: Stack(
-                      alignment: Alignment.centerRight,
-                      children: [
-                        Container(
-                          width: 100,
-                          height: 100,
-                          margin: getMargin(
-                            right: 285,
-                            left: 0,
-                            top: 0,
-                            bottom: 0,
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                ),
+                // Align(
+                //   alignment: Alignment.centerLeft,
+                //   child: Container(
+                //     height: getVerticalSize(
+                //       33.00,
+                //     ),
+                //     width: size.width,
+                //     margin: getMargin(
+                //       top: 0,
+                //     ),
+                //     child: Stack(
+                //       alignment: Alignment.centerRight,
+                //       children: [
+                //         Container(
+                //           width: 100,
+                //           height: 100,
+                //           margin: getMargin(
+                //             right: 285,
+                //             left: 0,
+                //             top: 0,
+                //             bottom: 0,
+                //           ),
+                //         ),
+                //       ],
+                //     ),
+                //   ),
+                // ),
                 Padding(
                   padding: getPadding(
                     left: 25,
@@ -106,10 +116,84 @@ class ProsesScreen extends StatelessWidget {
 
                 Container(
                     height: 320,
-                    color: Colors.white,
-                    child: Scrollbar(
-                      child: _buildListView(),
+                    // color: Colors.white,
+                    // child: Scrollbar(
+                    //   child: _buildListView(),
+                    // )
+                    child: ScrollableTableView(
+                      columns: [
+                        "id_transaksi",
+                        "nama_barang",
+                        "jumlah",
+                        "harga",
+                      ].map((column) {
+                        return TableViewColumn(
+                          label: column,
+                        );
+                      }).toList(),
+                      rows: [
+                        ["PR1000", "jus pisang", "1", "10.000"],
+                        ["PR1000", "nasi goreng", "1", "20.000"],
+                        ["PR1000", "piscok", "1", "8.000"],
+                        ["PR1000", "bakso", "1", "12.000"],
+                        ["PR1000", "karedok", "1", "9.000"],
+                        ["PR1000", "mi goreng", "1", "9.000"],
+                        ["PR1000", "fuyunghai", "1", "19.000"],
+                        ["PR1000", "udang saus mentega", "1", "30.000"],
+                      ].map((record) {
+                        return TableViewRow(
+                          height: 60,
+                          cells: record.map((value) {
+                            return TableViewCell(
+                              child: Text(value),
+                            );
+                          }).toList(),
+                        );
+                      }).toList(),
                     )),
+
+                // body: Center(
+
+                // child: column(children: <Widget>[
+                //   Container(
+                //     margin: EdgeInsets.all(20),
+                //     child: Table(
+                //       defaultColumnWidth: FixedColumnWidth(120.0),
+                //       border: TableBorder.all(
+                //         Color: Colors.black,
+                //         style: BorderStyle.solid,
+                //         width: 2),
+
+                //     children: [
+                //       TableRow( children: [
+                //         Column(children:[Text('Website', style: TextStyle(fontSize:20.0))]),
+                //         Column(children:
+                //         [Text('Tutorial',style: TextStyle(fontSize))]),
+                //         Column(children:[Text('Review', style: TextStyle(fontSize:20.0))]),
+
+                //       ]),
+                //       TableRow( children:[
+                //         Column(children:[text('Javatpoint')]),
+                //         Column(children:[text('Flutter')]),
+                //         Column(children:[Text('5*')]),
+
+                //       ]),
+                //       TableRow( children: [
+                //         Column(children:[Text('Javatpoint')]),
+                //         Column(children:[Text('MySQL')]),
+                //         Column(children:[Text('5*')]),
+
+                //       ])
+                //       TableRow( children: [
+                //         Column(children:[Text('Javapoint')]),
+                //         Column(children:[Text('ReactJS')]),
+                //         Column(children:[Text('5*')]),
+                //       ]),
+                //     ],
+                //     ),
+                //   ),
+                // ]),
+                // );
 
                 Align(
                   alignment: Alignment.centerLeft,
