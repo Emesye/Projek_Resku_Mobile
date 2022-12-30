@@ -1,9 +1,8 @@
+import 'package:masayu_s_application6/presentation/proses_screen/struk_screen.dart';
 import 'package:scrollable_table_view/scrollable_table_view.dart';
 
-import '../proses_screen/widgets/proses_item_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:masayu_s_application6/core/app_export.dart';
-import 'package:masayu_s_application6/widgets/custom_button.dart';
 import 'package:masayu_s_application6/presentation/proses_screen/kembaliscreen.dart';
 // Widget build(BuildContext context) {
 //   return MaterialApp(
@@ -173,7 +172,7 @@ class ProsesScreen extends StatelessWidget {
                   alignment: Alignment.centerLeft,
                   child: Padding(
                     padding: getPadding(
-                      left: 150,
+                      left: 110,
                       top: 0,
                       right: 0,
                     ),
@@ -200,7 +199,7 @@ class ProsesScreen extends StatelessWidget {
                           color: Colors.white,
                           child: Align(
                             alignment: Alignment.centerLeft,
-                            child: Text('BAYAR'
+                            child: Text('           BAYAR'
                                 // textAlign: TextAlign.center,
                                 // decoration: InputDecoration(
                                 //   border: OutlineInputBorder(
@@ -344,30 +343,21 @@ class ProsesScreen extends StatelessWidget {
                           ),
                           padding: EdgeInsets.only(top: 4),
                           child: MaterialButton(
-                              child: Text("Bayar"),
-                              minWidth: double.infinity,
-                              height: 45.0,
-                              color: Color.fromARGB(255, 194, 45, 45),
-                              textColor: Colors.white70,
-                              onPressed: () {
-                                showDialog(
-                                  context: context,
-                                  builder: (context) {
-                                    return AlertDialog(
-                                      title: Text(""),
-                                      content: Text("transaksi berhasil!"),
-                                      actions: [
-                                        TextButton(
-                                          onPressed: () {
-                                            Navigator.pop(context);
-                                          },
-                                          child: Text("Okay"),
-                                        ),
-                                      ],
-                                    );
-                                  },
-                                );
-                              }),
+                            child: Text("Bayar"),
+                            minWidth: double.infinity,
+                            height: 45.0,
+                            color: Color.fromARGB(255, 194, 45, 45),
+                            textColor: Colors.white70,
+                            onPressed: (() {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => Struk(
+                                          title: 'Struk',
+                                        )),
+                              );
+                            }),
+                          ),
                         ),
                       ],
                     ),
