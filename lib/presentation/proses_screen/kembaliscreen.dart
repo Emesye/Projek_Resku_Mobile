@@ -122,7 +122,7 @@ class kembali extends StatelessWidget {
                             bottom: 0,
                           ),
                           child: Text(
-                            " HALAMAN KEMBALI",
+                            " HALAMAN",
                             overflow: TextOverflow.ellipsis,
                             textAlign: TextAlign.left,
                             style: TextStyle(
